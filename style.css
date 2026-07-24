@@ -12,52 +12,65 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
+    padding:20px;
 }
 
 .login-box{
-    width:90%;
-    max-width:420px;
+    width:100%;
+    max-width:430px;
     background:#ffffff;
     border-radius:18px;
-    padding:30px;
+    padding:35px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
     text-align:center;
 }
 
 .logo{
     width:120px;
+    height:auto;
     margin-bottom:20px;
 }
 
 h1{
     color:#163d7a;
     margin-bottom:10px;
-    font-size:30px;
+    font-size:32px;
 }
 
 .subtitle{
     color:#8a6b22;
     margin-bottom:25px;
+    line-height:1.8;
+    font-size:15px;
 }
 
 input{
     width:100%;
     padding:14px;
     margin:10px 0;
-    border:1px solid #ccc;
+    border:1px solid #cfd8e3;
     border-radius:10px;
     font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#163d7a;
+    box-shadow:0 0 8px rgba(22,61,122,.2);
 }
 
 button{
     width:100%;
     padding:14px;
+    margin-top:10px;
     background:#163d7a;
-    color:white;
+    color:#fff;
     border:none;
     border-radius:10px;
     font-size:18px;
     cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
@@ -68,4 +81,17 @@ footer{
     margin-top:25px;
     color:#666;
     font-size:13px;
+    line-height:1.7;
+}
+
+@media(max-width:600px){
+
+    .login-box{
+        padding:25px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
 }
