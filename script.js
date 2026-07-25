@@ -1,40 +1,26 @@
-// ======================================
-// المعجم المهري
-// الإصدار 0.1
-// ملف JavaScript الرئيسي
-// ======================================
+// =====================================
+// المعجم المهري - النسخة الخاصة
+// JavaScript الأساسي
+// =====================================
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("تم تشغيل المعجم المهري");
+    const form = document.querySelector("form");
 
-    const loginButton = document.getElementById("loginBtn");
+    if (!form) return;
 
-    if (loginButton) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        loginButton.addEventListener("click", function () {
+        const username = form.querySelector('input[type="text"]').value.trim();
+        const password = form.querySelector('input[type="password"]').value.trim();
 
-            const username = document.getElementById("username").value.trim();
-            const password = document.getElementById("password").value.trim();
+        if (username === "" || password === "") {
+            alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
+            return;
+        }
 
-            if (username === "") {
-                alert("يرجى إدخال اسم المستخدم.");
-                return;
-            }
-
-            if (password === "") {
-                alert("يرجى إدخال كلمة المرور.");
-                return;
-            }
-
-            alert("مرحباً بك في المعجم المهري");
-
-            // في المرحلة القادمة
-            // سيتم الانتقال إلى لوحة التحكم
-            // window.location.href = "dashboard.html";
-
-        });
-
-    }
+        alert("تم تسجيل الدخول (نسخة تجريبية).");
+    });
 
 });
