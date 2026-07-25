@@ -3,13 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=frontend/pages/login.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1; url=frontend/pages/login.html">
+
     <title>المعجم المهري</title>
+
+    <script>
+        window.location.replace("frontend/pages/login.html");
+    </script>
 </head>
 
 <body>
 
-    <p>جارٍ تحويلك إلى صفحة تسجيل الدخول...</p>
+    <noscript>
+        <p>
+            يتم تحويلك إلى صفحة تسجيل الدخول...
+            <a href="frontend/pages/login.html">اضغط هنا إذا لم يتم التحويل</a>.
+        </p>
+    </noscript>
 
 </body>
 
