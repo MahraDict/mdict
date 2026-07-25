@@ -1,14 +1,26 @@
+/* ======================================
+   المعجم المهري - النسخة الخاصة
+   تصميم صفحة تسجيل الدخول
+====================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:"Tahoma",sans-serif;
 }
 
 body{
-    direction:rtl;
-    background:#eef4fa;
+    font-family:Tahoma, Arial, sans-serif;
+    background:#f5f7fa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     min-height:100vh;
+    direction:rtl;
+}
+
+#app{
+    width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -17,81 +29,51 @@ body{
 
 .login-box{
     width:100%;
-    max-width:430px;
+    max-width:360px;
     background:#ffffff;
-    border-radius:18px;
-    padding:35px;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
     text-align:center;
 }
 
-.logo{
-    width:120px;
-    height:auto;
+.login-box h1{
+    color:#00695c;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.login-box p{
+    color:#666;
     margin-bottom:20px;
 }
 
-h1{
-    color:#163d7a;
-    margin-bottom:10px;
-    font-size:32px;
-}
-
-.subtitle{
-    color:#8a6b22;
-    margin-bottom:25px;
-    line-height:1.8;
-    font-size:15px;
-}
-
-input{
+.login-box input{
     width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:1px solid #cfd8e3;
-    border-radius:10px;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
     font-size:16px;
+}
+
+.login-box input:focus{
     outline:none;
-    transition:.3s;
+    border-color:#00695c;
 }
 
-input:focus{
-    border-color:#163d7a;
-    box-shadow:0 0 8px rgba(22,61,122,.2);
-}
-
-button{
+.login-box button{
     width:100%;
-    padding:14px;
-    margin-top:10px;
-    background:#163d7a;
+    padding:12px;
+    background:#00695c;
     color:#fff;
     border:none;
-    border-radius:10px;
-    font-size:18px;
+    border-radius:8px;
+    font-size:17px;
     cursor:pointer;
-    transition:.3s;
+    transition:0.3s;
 }
 
-button:hover{
-    background:#1d4f9b;
-}
-
-footer{
-    margin-top:25px;
-    color:#666;
-    font-size:13px;
-    line-height:1.7;
-}
-
-@media(max-width:600px){
-
-    .login-box{
-        padding:25px;
-    }
-
-    h1{
-        font-size:28px;
-    }
-
+.login-box button:hover{
+    background:#004d40;
 }
