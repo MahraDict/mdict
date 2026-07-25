@@ -1,26 +1,30 @@
 // =====================================
-// المعجم المهري - النسخة الخاصة
-// JavaScript الأساسي
+// المعجم المهري
+// الملف الرئيسي لجافاسكريبت
 // =====================================
 
 document.addEventListener("DOMContentLoaded", () => {
-
     const form = document.querySelector("form");
 
-    if (!form) return;
+    if (!form) {
+        return;
+    }
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    const usernameInput = form.querySelector('input[name="username"]');
+    const passwordInput = form.querySelector('input[name="password"]');
 
-        const username = form.querySelector('input[type="text"]').value.trim();
-        const password = form.querySelector('input[type="password"]').value.trim();
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        if (username === "" || password === "") {
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!username || !password) {
             alert("يرجى إدخال اسم المستخدم وكلمة المرور.");
             return;
         }
 
+        // سيتم استبدال هذا لاحقًا بنظام تسجيل دخول حقيقي.
         alert("تم تسجيل الدخول (نسخة تجريبية).");
     });
-
 });
