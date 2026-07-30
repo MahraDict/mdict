@@ -1,26 +1,18 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-
-dotenv.config();
+const express = require("express");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares
-app.use(cors());
+const routes = require("./routes");
+
 app.use(express.json());
 
-// الصفحة الرئيسية
+app.use("/api", routes);
+
 app.get("/", (req, res) => {
-  res.json({
-    project: "MahraDict API",
-    version: "1.0.0",
-    status: "Running"
-  });
+  res.send("Mahra Dictionary Backend");
 });
 
-// تشغيل الخادم
 app.listen(PORT, () => {
-  console.log(`MahraDict API running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
