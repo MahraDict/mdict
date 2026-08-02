@@ -1,11 +1,10 @@
 const express = require("express");
-
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({
-    message: "Mahra Dictionary API is running"
-  });
-});
+const {
+  getApiStatus
+} = require("../controllers/dictionaryController");
+
+router.get("/", getApiStatus);
 
 module.exports = router;
