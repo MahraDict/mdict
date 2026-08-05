@@ -16,12 +16,20 @@
 :root {
     --primary-color: #00695c;
     --primary-hover: #004d40;
+
     --background-color: #f5f7fa;
     --card-color: #ffffff;
-    --text-color: #666666;
+
+    --text-color: #444444;
     --border-color: #cccccc;
+
     --shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     --radius: 12px;
+}
+
+/* إعدادات عامة */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -30,12 +38,14 @@ body {
     color: var(--text-color);
     direction: rtl;
     min-height: 100vh;
+    line-height: 1.6;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* الحاوية الرئيسية */
 #app {
     width: 100%;
     display: flex;
@@ -44,6 +54,7 @@ body {
     padding: 20px;
 }
 
+/* بطاقة تسجيل الدخول */
 .login-box {
     width: 100%;
     max-width: 360px;
@@ -54,16 +65,18 @@ body {
     text-align: center;
 }
 
-.login-box h1 {
+/* رأس البطاقة */
+.login-header h1 {
     color: var(--primary-color);
     font-size: 28px;
     margin-bottom: 10px;
 }
 
-.login-box p {
+.login-header p {
     margin-bottom: 20px;
 }
 
+/* الحقول */
 .login-box input {
     width: 100%;
     padding: 12px;
@@ -74,14 +87,17 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 8px;
 
-    transition: border-color .25s ease;
+    transition: border-color .25s ease,
+                box-shadow .25s ease;
 }
 
 .login-box input:focus {
     outline: none;
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.15);
 }
 
+/* الزر */
 .login-box button {
     width: 100%;
     padding: 12px;
@@ -93,13 +109,19 @@ body {
     color: #ffffff;
 
     font-size: 17px;
+    font-weight: bold;
     cursor: pointer;
 
-    transition: background .25s ease;
+    transition: background .25s ease,
+                transform .15s ease;
 }
 
 .login-box button:hover {
     background: var(--primary-hover);
+}
+
+.login-box button:active {
+    transform: scale(0.98);
 }
 
 .login-box button:focus-visible {
@@ -107,13 +129,18 @@ body {
     outline-offset: 2px;
 }
 
-/* تحسين العرض على الشاشات الصغيرة */
+/* تحسين العرض على الهواتف */
 @media (max-width: 480px) {
+
+    #app {
+        padding: 16px;
+    }
+
     .login-box {
         padding: 24px;
     }
 
-    .login-box h1 {
+    .login-header h1 {
         font-size: 24px;
     }
 }
